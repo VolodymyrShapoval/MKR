@@ -1,4 +1,4 @@
-from read_content import *
+from funcs.read_content import *
 
 
 def write_to_file(content, write_file_path):
@@ -13,7 +13,7 @@ def write_to_file(content, write_file_path):
         PermissionError: If the user does not have permission to write to the file.
         OSError: For any other operating system related errors.
     """
-    with open("write_file_path", "w") as file:
+    with open(write_file_path, "w") as file:
         file.writelines(content)
 
 
@@ -53,4 +53,6 @@ def write_diff_line_to_file(write_file_path, readfile1, readfile2):
     """
     diff_lines = get_different_content_from_files(readfile1, readfile2)
     write_to_file(diff_lines, write_file_path)
+
+
 
